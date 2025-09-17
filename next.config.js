@@ -1,13 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
-  // Internationalization configuration
-  i18n: {
-    locales: ['en', 'fa'],
-    defaultLocale: 'en',
-  },
   // Uncomment the following lines for GitHub Pages deployment:
   // output: 'export',
   // trailingSlash: true,
