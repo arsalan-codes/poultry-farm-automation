@@ -278,6 +278,6 @@ For support, email Arsalanrezazadeh4@gmail.com or create an issue in the GitHub 
 
 **🐓 Built with ❤️ for modern poultry farming**
 
-[Live Demo](https://poultry-farm-automation-jnfol72yj-arsalan-codes-projects.vercel.app/) | [Documentation](https://github.com/arsalan-codes/poultry-farm-automation/wiki) | [Issues](https://github.com/arsalan-codes/poultry-farm-automation/issues)
+[Live Demo](https://poultry-farm-automation.vercel.app/) | [Documentation](https://github.com/arsalan-codes/poultry-farm-automation/wiki) | [Issues](https://github.com/arsalan-codes/poultry-farm-automation/issues)
 
 </div>
