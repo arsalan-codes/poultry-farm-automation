@@ -1,9 +1,6 @@
-/* Import Vazirmatn font for Persian */
+/* Import fonts */
 @import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
-
-/* Import Material Design fonts for English */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,576 +8,125 @@
 
 @layer base {
   :root {
-    /* Material Design 3 Color System */
-    --md-primary: 103 80% 40%;
-    --md-on-primary: 0 0% 100%;
-    --md-primary-container: 103 100% 88%;
-    --md-on-primary-container: 103 100% 10%;
-    
-    --md-secondary: 45 100% 35%;
-    --md-on-secondary: 0 0% 100%;
-    --md-secondary-container: 45 100% 88%;
-    --md-on-secondary-container: 45 100% 10%;
-    
-    --md-tertiary: 260 60% 40%;
-    --md-on-tertiary: 0 0% 100%;
-    --md-tertiary-container: 260 100% 90%;
-    --md-on-tertiary-container: 260 100% 15%;
-    
-    --md-error: 0 65% 51%;
-    --md-on-error: 0 0% 100%;
-    --md-error-container: 0 100% 92%;
-    --md-on-error-container: 0 100% 20%;
-    
-    --md-surface: 0 0% 98%;
-    --md-on-surface: 0 0% 10%;
-    --md-surface-variant: 0 0% 93%;
-    --md-on-surface-variant: 0 0% 40%;
-    
-    --md-outline: 0 0% 60%;
-    --md-outline-variant: 0 0% 78%;
-    --md-shadow: 0 0% 0%;
-    --md-scrim: 0 0% 0%;
-    
-    /* Surface levels */
-    --md-surface-container-lowest: 0 0% 100%;
-    --md-surface-container-low: 0 0% 96%;
-    --md-surface-container: 0 0% 94%;
-    --md-surface-container-high: 0 0% 92%;
-    --md-surface-container-highest: 0 0% 90%;
-    
-    /* Elevation levels */
-    --md-elevation-1: 0px 1px 3px 1px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
-    --md-elevation-2: 0px 2px 6px 2px rgba(0,0,0,0.15), 0px 1px 2px 0px rgba(0,0,0,0.3);
-    --md-elevation-3: 0px 4px 8px 3px rgba(0,0,0,0.15), 0px 1px 3px 0px rgba(0,0,0,0.3);
-    --md-elevation-4: 0px 6px 10px 4px rgba(0,0,0,0.15), 0px 2px 3px 0px rgba(0,0,0,0.3);
-    --md-elevation-5: 0px 8px 12px 6px rgba(0,0,0,0.15), 0px 4px 4px 0px rgba(0,0,0,0.3);
-    
-    /* Border radius - Material Design 3 */
-    --md-radius-xs: 4px;
-    --md-radius-sm: 8px;
-    --md-radius-md: 12px;
-    --md-radius-lg: 16px;
-    --md-radius-xl: 28px;
-    
-    /* Spacing - Material Design 3 (8dp grid) */
-    --md-spacing-1: 4px;   /* 0.5 * 8dp */
-    --md-spacing-2: 8px;   /* 1 * 8dp */
-    --md-spacing-3: 12px;  /* 1.5 * 8dp */
-    --md-spacing-4: 16px;  /* 2 * 8dp */
-    --md-spacing-5: 20px;  /* 2.5 * 8dp */
-    --md-spacing-6: 24px;  /* 3 * 8dp */
-    --md-spacing-8: 32px;  /* 4 * 8dp */
-    --md-spacing-10: 40px; /* 5 * 8dp */
-    --md-spacing-12: 48px; /* 6 * 8dp */
-    --md-spacing-16: 64px; /* 8 * 8dp */
+    /* Modern Light Theme */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --primary: 47 96% 53%;
+    --primary-foreground: 26 83% 14%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 98%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 47 96% 53%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
   }
 
   .dark {
-    /* Material Design 3 Dark Theme */
-    --md-primary: 103 100% 80%;
-    --md-on-primary: 103 100% 20%;
-    --md-primary-container: 103 100% 30%;
-    --md-on-primary-container: 103 100% 90%;
-    
-    --md-secondary: 45 100% 80%;
-    --md-on-secondary: 45 100% 20%;
-    --md-secondary-container: 45 100% 30%;
-    --md-on-secondary-container: 45 100% 90%;
-    
-    --md-tertiary: 260 100% 80%;
-    --md-on-tertiary: 260 100% 20%;
-    --md-tertiary-container: 260 100% 30%;
-    --md-on-tertiary-container: 260 100% 90%;
-    
-    --md-error: 0 100% 80%;
-    --md-on-error: 0 100% 20%;
-    --md-error-container: 0 100% 30%;
-    --md-on-error-container: 0 100% 90%;
-    
-    --md-surface: 0 0% 6%;
-    --md-on-surface: 0 0% 90%;
-    --md-surface-variant: 0 0% 20%;
-    --md-on-surface-variant: 0 0% 70%;
-    
-    --md-outline: 0 0% 60%;
-    --md-outline-variant: 0 0% 30%;
-    
-    --md-surface-container-lowest: 0 0% 4%;
-    --md-surface-container-low: 0 0% 10%;
-    --md-surface-container: 0 0% 12%;
-    --md-surface-container-high: 0 0% 17%;
-    --md-surface-container-highest: 0 0% 22%;
-  }
-  
-  html.dark {
-    background-color: hsl(var(--md-surface));
-    color: hsl(var(--md-on-surface));
-  }
-  
-  html.dark body {
-    background-color: hsl(var(--md-surface));
-    color: hsl(var(--md-on-surface));
-  }
-  
-  html.dark *,
-  .dark * {
-    border-color: hsl(var(--md-outline-variant));
-  }
-  
-  /* Dark theme for all components */
-  .dark .md-card,
-  .dark .md-card-elevated,
-  .dark .md-card-filled,
-  .dark .md-card-outlined {
-    background-color: hsl(var(--md-surface-container));
-    color: hsl(var(--md-on-surface));
-    border-color: hsl(var(--md-outline-variant));
-  }
-  
-  .dark .md-input {
-    background-color: hsl(var(--md-surface-container-highest));
-    color: hsl(var(--md-on-surface));
-    border-color: hsl(var(--md-outline));
-  }
-  
-  .dark .md-nav-bar {
-    background-color: hsl(var(--md-surface-container));
-    color: hsl(var(--md-on-surface));
-    border-color: hsl(var(--md-outline-variant));
+    /* Modern Dark Theme */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --primary: 47 96% 53%;
+    --primary-foreground: 26 83% 14%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 47 96% 53%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
   }
 
   * {
-    border-color: hsl(var(--md-outline-variant));
+    @apply border-border;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
-  
+
   body {
-    font-family: 'Roboto', 'Vazirmatn', sans-serif;
-    background-color: hsl(var(--md-surface));
-    color: hsl(var(--md-on-surface));
-    line-height: 1.6;
-    font-size: 16px;
-    direction: ltr;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  
-  /* Persian font and RTL styles */
-  html[dir="rtl"] {
-    direction: rtl;
-  }
-  
+
   html[dir="rtl"] body {
-    font-family: 'Vazirmatn', 'Roboto', sans-serif;
-    direction: rtl;
-  }
-  
-  [dir="rtl"] {
-    font-family: 'Vazirmatn', 'Roboto', sans-serif;
-    direction: rtl;
-  }
-  
-  [dir="ltr"] {
-    font-family: 'Roboto', 'Vazirmatn', sans-serif;
-    direction: ltr;
-  }
-  
-  /* Material Design Typography Scale */
-  .md-display-large {
-    font-size: 57px;
-    line-height: 64px;
-    font-weight: 400;
-    letter-spacing: -0.25px;
-  }
-  
-  .md-display-medium {
-    font-size: 45px;
-    line-height: 52px;
-    font-weight: 400;
-    letter-spacing: 0px;
-  }
-  
-  .md-display-small {
-    font-size: 36px;
-    line-height: 44px;
-    font-weight: 400;
-    letter-spacing: 0px;
-  }
-  
-  .md-headline-large {
-    font-size: 32px;
-    line-height: 40px;
-    font-weight: 400;
-    letter-spacing: 0px;
-  }
-  
-  .md-headline-medium {
-    font-size: 28px;
-    line-height: 36px;
-    font-weight: 400;
-    letter-spacing: 0px;
-  }
-  
-  .md-headline-small {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 400;
-    letter-spacing: 0px;
-  }
-  
-  .md-title-large {
-    font-size: 22px;
-    line-height: 28px;
-    font-weight: 400;
-    letter-spacing: 0px;
-  }
-  
-  .md-title-medium {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 500;
-    letter-spacing: 0.15px;
-  }
-  
-  .md-title-small {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 500;
-    letter-spacing: 0.1px;
-  }
-  
-  .md-label-large {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 500;
-    letter-spacing: 0.1px;
-  }
-  
-  .md-label-medium {
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-  
-  .md-label-small {
-    font-size: 11px;
-    line-height: 16px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-  
-  .md-body-large {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-  }
-  
-  .md-body-medium {
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
-    letter-spacing: 0.25px;
-  }
-  
-  .md-body-small {
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 400;
-    letter-spacing: 0.4px;
+    font-family: 'Vazirmatn', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 }
 
 @layer components {
-  /* Material Design 3 Components */
-  
-  /* Cards */
-  .md-card {
-    @apply rounded-xl;
-    background-color: hsl(var(--md-surface-container));
-    color: hsl(var(--md-on-surface));
-    box-shadow: var(--md-elevation-1);
-    padding: var(--md-spacing-6);
-    border: 1px solid hsl(var(--md-outline-variant));
+  /* Modern Components */
+  .card {
+    @apply rounded-lg border bg-card text-card-foreground shadow-sm;
   }
-  
-  .md-card-elevated {
-    @apply rounded-xl;
-    background-color: hsl(var(--md-surface-container-low));
-    color: hsl(var(--md-on-surface));
-    box-shadow: var(--md-elevation-3);
-    padding: var(--md-spacing-6);
-    border: none;
-  }
-  
-  .md-card-filled {
-    @apply rounded-xl;
-    background-color: hsl(var(--md-surface-container-highest));
-    color: hsl(var(--md-on-surface));
-    padding: var(--md-spacing-6);
-    border: none;
-  }
-  
-  .md-card-outlined {
-    @apply rounded-xl;
-    background-color: hsl(var(--md-surface));
-    color: hsl(var(--md-on-surface));
-    padding: var(--md-spacing-6);
-    border: 1px solid hsl(var(--md-outline));
-  }
-  
-  /* Buttons */
-  .md-button {
-    @apply inline-flex items-center justify-center;
-    @apply rounded-full px-6 py-2.5;
-    @apply md-label-large;
-    @apply transition-all duration-200 ease-in-out;
-    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
-    min-height: 40px;
-    text-transform: none;
-  }
-  
-  .md-button-filled {
-    @apply md-button;
-    background-color: hsl(var(--md-primary));
-    color: hsl(var(--md-on-primary));
-    box-shadow: var(--md-elevation-1);
-  }
-  
-  .md-button-filled:hover {
-    box-shadow: var(--md-elevation-2);
-    filter: brightness(1.05);
-  }
-  
-  .md-button-filled:active {
-    box-shadow: var(--md-elevation-1);
-    transform: scale(0.98);
-  }
-  
-  .md-button-outlined {
-    @apply md-button;
-    background-color: transparent;
-    color: hsl(var(--md-primary));
-    border: 1px solid hsl(var(--md-outline));
-  }
-  
-  .md-button-outlined:hover {
-    background-color: hsl(var(--md-primary) / 0.08);
-  }
-  
-  .md-button-text {
-    @apply md-button;
-    background-color: transparent;
-    color: hsl(var(--md-primary));
-    padding-left: var(--md-spacing-3);
-    padding-right: var(--md-spacing-3);
-  }
-  
-  .md-button-text:hover {
-    background-color: hsl(var(--md-primary) / 0.08);
-  }
-  
-  .md-button-tonal {
-    @apply md-button;
-    background-color: hsl(var(--md-secondary-container));
-    color: hsl(var(--md-on-secondary-container));
-  }
-  
-  .md-button-tonal:hover {
-    box-shadow: var(--md-elevation-1);
-    filter: brightness(1.05);
-  }
-  
-  /* FAB (Floating Action Button) */
-  .md-fab {
-    @apply inline-flex items-center justify-center;
-    @apply rounded-2xl;
-    @apply transition-all duration-200 ease-in-out;
-    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
-    width: 56px;
-    height: 56px;
-    background-color: hsl(var(--md-primary-container));
-    color: hsl(var(--md-on-primary-container));
-    box-shadow: var(--md-elevation-3);
-  }
-  
-  .md-fab:hover {
-    box-shadow: var(--md-elevation-4);
-  }
-  
-  .md-fab-large {
-    @apply md-fab;
-    width: 96px;
-    height: 96px;
-    @apply rounded-3xl;
-  }
-  
-  .md-fab-small {
-    @apply md-fab;
-    width: 40px;
-    height: 40px;
-    @apply rounded-xl;
-  }
-  
-  /* Input Fields */
-  .md-input {
-    @apply w-full rounded-lg px-4 py-3;
-    @apply md-body-large;
-    @apply transition-all duration-200 ease-in-out;
-    @apply focus:outline-none focus:ring-2;
-    background-color: hsl(var(--md-surface-container-highest));
-    color: hsl(var(--md-on-surface));
-    border: 1px solid hsl(var(--md-outline));
-  }
-  
-  .md-input:focus {
-    border-color: hsl(var(--md-primary));
-    box-shadow: 0 0 0 2px hsl(var(--md-primary) / 0.2);
-  }
-  
-  .md-input::placeholder {
-    color: hsl(var(--md-on-surface-variant));
-  }
-  
-  /* Navigation */
-  .md-nav-bar {
-    background-color: hsl(var(--md-surface-container));
-    color: hsl(var(--md-on-surface));
-    border-bottom: 1px solid hsl(var(--md-outline-variant));
-    box-shadow: var(--md-elevation-2);
-  }
-  
-  .md-nav-item {
-    @apply md-label-large;
-    @apply px-4 py-3 rounded-lg;
-    @apply transition-all duration-200 ease-in-out;
-    color: hsl(var(--md-on-surface-variant));
-  }
-  
-  .md-nav-item:hover {
-    background-color: hsl(var(--md-on-surface) / 0.08);
-    color: hsl(var(--md-on-surface));
-  }
-  
-  .md-nav-item.active {
-    background-color: hsl(var(--md-secondary-container));
-    color: hsl(var(--md-on-secondary-container));
-  }
-  
-  /* Status indicators */
-  .md-status-normal {
-    background-color: hsl(120 100% 95%);
-    color: hsl(120 100% 25%);
-    border: 1px solid hsl(120 50% 80%);
-  }
-  
-  .dark .md-status-normal {
-    background-color: hsl(120 100% 10%);
-    color: hsl(120 100% 80%);
-    border: 1px solid hsl(120 50% 30%);
-  }
-  
-  .md-status-warning {
-    background-color: hsl(45 100% 95%);
-    color: hsl(45 100% 25%);
-    border: 1px solid hsl(45 70% 80%);
-  }
-  
-  .dark .md-status-warning {
-    background-color: hsl(45 100% 10%);
-    color: hsl(45 100% 80%);
-    border: 1px solid hsl(45 70% 30%);
-  }
-  
-  .md-status-danger {
-    background-color: hsl(var(--md-error-container));
-    color: hsl(var(--md-on-error-container));
-    border: 1px solid hsl(var(--md-error) / 0.3);
-  }
-  
-  /* Spacing utilities */
-  .md-spacing-1 { margin: var(--md-spacing-1); }
-  .md-spacing-2 { margin: var(--md-spacing-2); }
-  .md-spacing-3 { margin: var(--md-spacing-3); }
-  .md-spacing-4 { margin: var(--md-spacing-4); }
-  .md-spacing-5 { margin: var(--md-spacing-5); }
-  .md-spacing-6 { margin: var(--md-spacing-6); }
-  .md-spacing-8 { margin: var(--md-spacing-8); }
-  .md-spacing-10 { margin: var(--md-spacing-10); }
-  .md-spacing-12 { margin: var(--md-spacing-12); }
-  .md-spacing-16 { margin: var(--md-spacing-16); }
-  
-  .md-gap-1 { gap: var(--md-spacing-1); }
-  .md-gap-2 { gap: var(--md-spacing-2); }
-  .md-gap-3 { gap: var(--md-spacing-3); }
-  .md-gap-4 { gap: var(--md-spacing-4); }
-  .md-gap-5 { gap: var(--md-spacing-5); }
-  .md-gap-6 { gap: var(--md-spacing-6); }
-  .md-gap-8 { gap: var(--md-spacing-8); }
-  .md-gap-10 { gap: var(--md-spacing-10); }
-  .md-gap-12 { gap: var(--md-spacing-12); }
-  .md-gap-16 { gap: var(--md-spacing-16); }
-  
-  .md-p-1 { padding: var(--md-spacing-1); }
-  .md-p-2 { padding: var(--md-spacing-2); }
-  .md-p-3 { padding: var(--md-spacing-3); }
-  .md-p-4 { padding: var(--md-spacing-4); }
-  .md-p-5 { padding: var(--md-spacing-5); }
-  .md-p-6 { padding: var(--md-spacing-6); }
-  .md-p-8 { padding: var(--md-spacing-8); }
-  .md-p-10 { padding: var(--md-spacing-10); }
-  .md-p-12 { padding: var(--md-spacing-12); }
-  .md-p-16 { padding: var(--md-spacing-16); }
-  
-  .md-m-1 { margin: var(--md-spacing-1); }
-  .md-m-2 { margin: var(--md-spacing-2); }
-  .md-m-3 { margin: var(--md-spacing-3); }
-  .md-m-4 { margin: var(--md-spacing-4); }
-  .md-m-5 { margin: var(--md-spacing-5); }
-  .md-m-6 { margin: var(--md-spacing-6); }
-  .md-m-8 { margin: var(--md-spacing-8); }
-  .md-m-10 { margin: var(--md-spacing-10); }
-  .md-m-12 { margin: var(--md-spacing-12); }
-  .md-m-16 { margin: var(--md-spacing-16); }
-}
 
-.sensor-card {
-  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700;
-}
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium;
+    @apply transition-colors focus-visible:outline-none focus-visible:ring-2;
+    @apply focus-visible:ring-ring focus-visible:ring-offset-2;
+    @apply disabled:opacity-50 disabled:pointer-events-none;
+    min-height: 2.5rem;
+    padding: 0.5rem 1rem;
+  }
 
-.control-button {
-  @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
-}
+  .btn-primary {
+    @apply btn bg-primary text-primary-foreground hover:bg-primary/90;
+  }
 
-.control-button-primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
-}
+  .btn-secondary {
+    @apply btn bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
 
-.control-button-secondary {
-  @apply bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-500 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600;
-}
+  .btn-outline {
+    @apply btn border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+  }
 
-/* Additional dark theme support */
-.dark .bg-white {
-  background-color: hsl(var(--md-surface-container)) !important;
-}
+  .input {
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2;
+    @apply text-sm ring-offset-background placeholder:text-muted-foreground;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+    @apply focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
 
-.dark .text-gray-900 {
-  color: hsl(var(--md-on-surface)) !important;
-}
+  .nav-header {
+    @apply sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur;
+  }
 
-.dark .text-gray-600 {
-  color: hsl(var(--md-on-surface-variant)) !important;
-}
+  .sensor-card {
+    @apply card p-6 hover:shadow-md transition-all duration-200 cursor-pointer;
+  }
 
-.dark .border-gray-200 {
-  border-color: hsl(var(--md-outline-variant)) !important;
-}
+  .sensor-card:hover {
+    transform: translateY(-1px);
+  }
 
-.dark .bg-gray-50 {
-  background-color: hsl(var(--md-surface-container-low)) !important;
-}
+  .status-success {
+    @apply bg-success/10 text-success border border-success/20 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
 
-.dark .bg-gray-100 {
-  background-color: hsl(var(--md-surface-container)) !important;
+  .status-warning {
+    @apply bg-warning/10 text-warning border border-warning/20 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .status-error {
+    @apply bg-destructive/10 text-destructive border border-destructive/20 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
 }

@@ -21,19 +21,35 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       const initialTheme = savedTheme || systemTheme;
       setTheme(initialTheme);
       
-      // Apply theme immediately to both html and body
-      const htmlElement = document.documentElement;
-      const bodyElement = document.body;
-      
-      if (initialTheme === 'dark') {
-        htmlElement.classList.add('dark');
-        bodyElement.classList.add('dark');
-      } else {
-        htmlElement.classList.remove('dark');
-        bodyElement.classList.remove('dark');
-      }
+      // Apply theme immediately to document elements
+      applyTheme(initialTheme);
     }
   }, []);
+
+  const applyTheme = (newTheme: 'light' | 'dark') => {
+    if (typeof window === 'undefined') return;
+    
+    const htmlElement = document.documentElement;
+    const bodyElement = document.body;
+    
+    // Remove existing theme classes
+    htmlElement.classList.remove('light', 'dark');
+    bodyElement.classList.remove('light', 'dark');
+    
+    // Add new theme class
+    htmlElement.classList.add(newTheme);
+    bodyElement.classList.add(newTheme);
+    
+    // Set data attribute for CSS selectors
+    htmlElement.setAttribute('data-theme', newTheme);
+    
+    // Force update of CSS custom properties
+    if (newTheme === 'dark') {
+      htmlElement.style.colorScheme = 'dark';
+    } else {
+      htmlElement.style.colorScheme = 'light';
+    }
+  };
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -41,24 +57,15 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     
     if (typeof window !== 'undefined') {
       localStorage.setItem('theme', newTheme);
-      
-      // Apply theme change immediately to both html and body
-      const htmlElement = document.documentElement;
-      const bodyElement = document.body;
-      
-      if (newTheme === 'dark') {
-        htmlElement.classList.add('dark');
-        bodyElement.classList.add('dark');
-      } else {
-        htmlElement.classList.remove('dark');
-        bodyElement.classList.remove('dark');
-      }
+      applyTheme(newTheme);
     }
   };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      <div className={`theme-wrapper ${theme}`}>
+        {children}
+      </div>
     </ThemeContext.Provider>
   );
 }

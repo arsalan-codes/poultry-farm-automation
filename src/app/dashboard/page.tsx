@@ -84,22 +84,22 @@ export default function DashboardPage() {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-md-surface">
+    <div className="min-h-screen bg-background transition-colors duration-300">
       {/* Header */}
-      <header className="md-nav-bar sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-md-4 sm:px-md-6 lg:px-md-8">
-          <div className="flex justify-between items-center py-md-4">
-            <div className="flex items-center md-gap-3">
-              <MdPets className="text-2xl text-md-primary" />
-              <h1 className="md-headline-small text-md-on-surface">
+      <header className="nav-header">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center gap-3">
+              <MdPets className="text-2xl text-primary" />
+              <h1 className="text-heading-4 text-foreground">
                 {t('app.title')}
               </h1>
             </div>
             
-            <div className="flex items-center md-gap-3">
+            <div className="flex items-center gap-3">
               <button
                 onClick={toggleTheme}
-                className="md-fab-small"
+                className="btn-outline btn-icon"
                 aria-label="Toggle theme"
               >
                 {theme === 'light' ? <MdDarkMode className="text-lg" /> : <MdLightMode className="text-lg" />}
@@ -107,30 +107,30 @@ export default function DashboardPage() {
               
               <button
                 onClick={toggleLanguage}
-                className="md-button-text"
+                className="btn-outline"
               >
-                <MdLanguage className="text-lg mr-1" />
-                <span className="md-label-large">{language === 'en' ? 'فا' : 'EN'}</span>
+                <MdLanguage className="text-lg mr-2" />
+                <span className="text-sm font-medium">{language === 'en' ? 'فا' : 'EN'}</span>
               </button>
               
-              <div className="hidden sm:flex items-center md-gap-2 px-md-3 py-md-2 rounded-lg bg-md-surface-container">
-                <div className="w-8 h-8 rounded-full bg-md-primary-container flex items-center justify-center">
-                  <span className="md-label-medium text-md-on-primary-container font-bold">
+              <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-sm font-bold text-primary">
                     {user.username.charAt(0).toUpperCase()}
                   </span>
                 </div>
                 <div>
-                  <p className="md-body-small text-md-on-surface font-medium">{user.username}</p>
-                  <p className="md-body-small text-md-on-surface-variant capitalize">{user.role}</p>
+                  <p className="text-sm font-medium text-foreground">{user.username}</p>
+                  <p className="text-xs text-muted-foreground capitalize">{user.role}</p>
                 </div>
               </div>
               
               <button
                 onClick={logout}
-                className="md-button-outlined"
+                className="btn-outline"
               >
-                <MdLogout className="text-lg mr-1" />
-                <span className="md-label-medium">{t('auth.logout')}</span>
+                <MdLogout className="text-lg mr-2" />
+                <span className="text-sm font-medium">{t('auth.logout')}</span>
               </button>
             </div>
           </div>
