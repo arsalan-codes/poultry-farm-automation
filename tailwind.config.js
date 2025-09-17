@@ -9,67 +9,48 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'Vazirmatn', 'system-ui', 'sans-serif'],
+        sans: ['Roboto', 'Vazirmatn', 'system-ui', 'sans-serif'],
         persian: ['Vazirmatn', 'system-ui', 'sans-serif'],
-        inter: ['Inter', 'system-ui', 'sans-serif'],
+        roboto: ['Roboto', 'system-ui', 'sans-serif'],
       },
       colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
-        },
-        destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
-        },
-        success: 'hsl(var(--success))',
-        warning: 'hsl(var(--warning))',
-        info: 'hsl(var(--info))',
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
-      keyframes: {
-        'fade-in': {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        'slide-up': {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'scale-in': {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
+        md: {
+          primary: 'hsl(var(--md-primary))',
+          'on-primary': 'hsl(var(--md-on-primary))',
+          'primary-container': 'hsl(var(--md-primary-container))',
+          'on-primary-container': 'hsl(var(--md-on-primary-container))',
+          
+          secondary: 'hsl(var(--md-secondary))',
+          'on-secondary': 'hsl(var(--md-on-secondary))',
+          'secondary-container': 'hsl(var(--md-secondary-container))',
+          'on-secondary-container': 'hsl(var(--md-on-secondary-container))',
+          
+          surface: 'hsl(var(--md-surface))',
+          'on-surface': 'hsl(var(--md-on-surface))',
+          'surface-variant': 'hsl(var(--md-surface-variant))',
+          'on-surface-variant': 'hsl(var(--md-on-surface-variant))',
+          'surface-container': 'hsl(var(--md-surface-container))',
+          'surface-container-low': 'hsl(var(--md-surface-container-low))',
+          'surface-container-high': 'hsl(var(--md-surface-container-high))',
+          'surface-container-highest': 'hsl(var(--md-surface-container-highest))',
+          
+          outline: 'hsl(var(--md-outline))',
+          'outline-variant': 'hsl(var(--md-outline-variant))',
+          error: 'hsl(var(--md-error))',
+          'on-error': 'hsl(var(--md-on-error))',
         },
       },
-      animation: {
-        'fade-in': 'fade-in 0.3s ease-in-out',
-        'slide-up': 'slide-up 0.3s ease-out',
-        'scale-in': 'scale-in 0.2s ease-out',
+      spacing: {
+        'md-1': 'var(--md-spacing-1)',
+        'md-2': 'var(--md-spacing-2)',
+        'md-3': 'var(--md-spacing-3)',
+        'md-4': 'var(--md-spacing-4)',
+        'md-5': 'var(--md-spacing-5)',
+        'md-6': 'var(--md-spacing-6)',
+        'md-8': 'var(--md-spacing-8)',
+        'md-10': 'var(--md-spacing-10)',
+        'md-12': 'var(--md-spacing-12)',
+        'md-16': 'var(--md-spacing-16)',
       },
     },
   },

@@ -84,22 +84,22 @@ export default function DashboardPage() {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-background transition-colors duration-300">
+    <div className="min-h-screen" style={{ backgroundColor: 'hsl(var(--md-surface))' }}>
       {/* Header */}
-      <header className="nav-header">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="md-nav-bar sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <div className="flex items-center gap-3">
-              <MdPets className="text-2xl text-primary" />
-              <h1 className="text-heading-4 text-foreground">
+            <div className="flex items-center md-gap-3">
+              <MdPets className="text-2xl" style={{ color: 'hsl(var(--md-primary))' }} />
+              <h1 className="md-headline-small" style={{ color: 'hsl(var(--md-on-surface))' }}>
                 {t('app.title')}
               </h1>
             </div>
             
-            <div className="flex items-center gap-3">
+            <div className="flex items-center md-gap-3">
               <button
                 onClick={toggleTheme}
-                className="btn-outline btn-icon"
+                className="md-fab-small"
                 aria-label="Toggle theme"
               >
                 {theme === 'light' ? <MdDarkMode className="text-lg" /> : <MdLightMode className="text-lg" />}
@@ -107,30 +107,30 @@ export default function DashboardPage() {
               
               <button
                 onClick={toggleLanguage}
-                className="btn-outline"
+                className="md-button-text"
               >
                 <MdLanguage className="text-lg mr-2" />
-                <span className="text-sm font-medium">{language === 'en' ? 'فا' : 'EN'}</span>
+                <span className="md-label-large">{language === 'en' ? 'فا' : 'EN'}</span>
               </button>
               
-              <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary">
-                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-sm font-bold text-primary">
+              <div className="hidden sm:flex items-center md-gap-2 px-3 py-2 rounded-lg" style={{ backgroundColor: 'hsl(var(--md-surface-container))' }}>
+                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--md-primary-container))' }}>
+                  <span className="text-sm font-bold" style={{ color: 'hsl(var(--md-on-primary-container))' }}>
                     {user.username.charAt(0).toUpperCase()}
                   </span>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-foreground">{user.username}</p>
-                  <p className="text-xs text-muted-foreground capitalize">{user.role}</p>
+                  <p className="text-sm font-medium" style={{ color: 'hsl(var(--md-on-surface))' }}>{user.username}</p>
+                  <p className="text-xs capitalize" style={{ color: 'hsl(var(--md-on-surface-variant))' }}>{user.role}</p>
                 </div>
               </div>
               
               <button
                 onClick={logout}
-                className="btn-outline"
+                className="md-button-outlined"
               >
                 <MdLogout className="text-lg mr-2" />
-                <span className="text-sm font-medium">{t('auth.logout')}</span>
+                <span className="md-label-large">{t('auth.logout')}</span>
               </button>
             </div>
           </div>
@@ -138,8 +138,8 @@ export default function DashboardPage() {
       </header>
 
       {/* Navigation Tabs */}
-      <nav className="bg-md-surface-container border-b border-md-outline-variant">
-        <div className="max-w-7xl mx-auto px-md-4 sm:px-md-6 lg:px-md-8">
+      <nav style={{ backgroundColor: 'hsl(var(--md-surface-container))', borderBottom: '1px solid hsl(var(--md-outline-variant))' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex md-gap-2">
             {(['sensors', 'control', 'analytics'] as const).map((tab) => (
               <button
@@ -162,7 +162,7 @@ export default function DashboardPage() {
                   </span>
                 </div>
                 {activeTab === tab && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-md-primary rounded-t" />
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 rounded-t" style={{ backgroundColor: 'hsl(var(--md-primary))' }} />
                 )}
               </button>
             ))}
@@ -171,21 +171,21 @@ export default function DashboardPage() {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-md-6 px-md-4 sm:px-md-6 lg:px-md-8">
+      <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div className="md-p-0">
           {activeTab === 'sensors' && (
             <>
-              <div className="mb-md-6">
-                <h2 className="md-headline-small text-md-on-surface mb-md-2 flex items-center md-gap-2">
+              <div className="md-mb-6">
+                <h2 className="md-headline-small md-mb-2 flex items-center md-gap-2" style={{ color: 'hsl(var(--md-on-surface))' }}>
                   <MdDashboard className="text-lg" />
                   {t('dashboard.sensorTitle')}
                 </h2>
-                <p className="md-body-medium text-md-on-surface-variant">
+                <p className="md-body-medium" style={{ color: 'hsl(var(--md-on-surface-variant))' }}>
                   {t('dashboard.sensorDesc')}
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {sensorData && (
                   <>
                     <SensorCard

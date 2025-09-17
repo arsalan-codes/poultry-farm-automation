@@ -20,15 +20,9 @@ interface SensorCardProps {
 
 export default function SensorCard({ title, value, unit, type, status, t }: SensorCardProps) {
   const statusClasses = {
-    normal: 'md-status-normal',
-    warning: 'md-status-warning',
-    danger: 'md-status-danger'
-  };
-
-  const statusDots = {
-    normal: 'bg-green-500',
-    warning: 'bg-yellow-500',
-    danger: 'bg-red-500'
+    normal: 'status-normal',
+    warning: 'status-warning',
+    danger: 'status-danger'
   };
   
   const iconMap = {
@@ -50,21 +44,21 @@ export default function SensorCard({ title, value, unit, type, status, t }: Sens
   };
 
   return (
-    <div className={`md-card-elevated ${statusClasses[status]} transition-all duration-300 hover:shadow-md-4`}>
-      <div className="flex items-start justify-between mb-md-4">
+    <div className="md-card hover:shadow-lg transition-all duration-300 cursor-pointer">
+      <div className="flex items-start justify-between mb-4">
         <div className="flex items-center md-gap-3">
-          <div className="text-3xl p-md-2 rounded-full bg-md-surface-container flex items-center justify-center">
+          <div className="text-3xl p-2 rounded-full flex items-center justify-center" style={{ backgroundColor: 'hsl(var(--md-surface-container))' }}>
             {iconMap[type]}
           </div>
           <div>
-            <h3 className="md-title-medium text-md-on-surface mb-md-1">
+            <h3 className="md-title-medium md-mb-1" style={{ color: 'hsl(var(--md-on-surface))' }}>
               {title}
             </h3>
             <div className="flex items-baseline md-gap-1">
-              <span className="md-headline-small font-bold text-md-on-surface">
+              <span className="md-headline-small font-bold" style={{ color: 'hsl(var(--md-on-surface))' }}>
                 {value.toFixed(1)}
               </span>
-              <span className="md-body-medium text-md-on-surface-variant">
+              <span className="md-body-medium" style={{ color: 'hsl(var(--md-on-surface-variant))' }}>
                 {unit}
               </span>
             </div>
@@ -72,18 +66,18 @@ export default function SensorCard({ title, value, unit, type, status, t }: Sens
         </div>
         
         <div className="flex flex-col items-end md-gap-2">
-          <div className="flex items-center justify-center w-8 h-8 rounded-full bg-md-surface-container">
+          <div className="flex items-center justify-center w-8 h-8 rounded-full" style={{ backgroundColor: 'hsl(var(--md-surface-container))' }}>
             <StatusIcon />
           </div>
-          <div className="px-md-2 py-md-1 rounded-full bg-md-surface-container">
-            <span className="md-label-small text-md-on-surface capitalize">
+          <div className={`px-2 py-1 rounded-full ${statusClasses[status]}`}>
+            <span className="text-xs font-medium capitalize">
               {t(`status.${status}`)}
             </span>
           </div>
         </div>
       </div>
       
-      <div className="h-2 bg-md-surface-container rounded-full overflow-hidden">
+      <div className="h-2 rounded-full overflow-hidden" style={{ backgroundColor: 'hsl(var(--md-surface-container))' }}>
         <div 
           className={`h-full transition-all duration-500 ${
             status === 'normal' ? 'bg-green-500' :
@@ -98,11 +92,11 @@ export default function SensorCard({ title, value, unit, type, status, t }: Sens
         />
       </div>
       
-      <div className="mt-md-3 flex justify-between items-center">
-        <span className="md-body-small text-md-on-surface-variant">
+      <div className="mt-3 flex justify-between items-center">
+        <span className="text-sm" style={{ color: 'hsl(var(--md-on-surface-variant))' }}>
           {t('status.lastUpdated')}
         </span>
-        <span className="md-body-small text-md-on-surface-variant">
+        <span className="text-sm" style={{ color: 'hsl(var(--md-on-surface-variant))' }}>
           {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </span>
       </div>
